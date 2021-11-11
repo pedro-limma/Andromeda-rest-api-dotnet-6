@@ -15,4 +15,8 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Adnromeda.Adapters.IoC\Andromeda.Adapters.IoC.csproj" />
+  </ItemGroup>
+
 </Project>

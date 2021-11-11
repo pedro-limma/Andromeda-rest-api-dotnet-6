@@ -19,15 +19,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL", "DAL", "{DB2723A1-8D5
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Andromeda.Domain.Application", "src\Adromeda.Domain.Application\Andromeda.Domain.Application.csproj", "{C6214AE1-AFF5-4FDD-A010-D279C6EB466E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Andromeda.Domain.Core", "src\Andromeda.Domain.Core\Andromeda.Domain.Core.csproj", "{CD3F3996-1538-4269-B24E-F1A994D912AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Andromeda.Domain.Core", "src\Andromeda.Domain.Core\Andromeda.Domain.Core.csproj", "{CD3F3996-1538-4269-B24E-F1A994D912AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adnromeda.Adapters.DAL", "src\Adnromeda.Adapters.DAL\Adnromeda.Adapters.DAL.csproj", "{CA3C9490-A22F-46C2-95E1-89C4499A983F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Andromeda.Adapters.DAL", "src\Adnromeda.Adapters.DAL\Andromeda.Adapters.DAL.csproj", "{CA3C9490-A22F-46C2-95E1-89C4499A983F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Andromeda .Ports.API", "src\Andromeda .Ports.API\Andromeda .Ports.API.csproj", "{3F90669E-B450-43E8-9710-E0818231C013}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Andromeda .Ports.API", "src\Andromeda .Ports.API\Andromeda .Ports.API.csproj", "{3F90669E-B450-43E8-9710-E0818231C013}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IoC", "IoC", "{153BDAC8-F7F0-477F-A526-6A3D234A6F28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adnromeda.Adapters.IoC", "src\Adnromeda.Adapters.IoC\Adnromeda.Adapters.IoC.csproj", "{694F580F-B4C1-40FE-8F80-5A59E125321A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Andromeda.Adapters.IoC", "src\Adnromeda.Adapters.IoC\Andromeda.Adapters.IoC.csproj", "{694F580F-B4C1-40FE-8F80-5A59E125321A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
