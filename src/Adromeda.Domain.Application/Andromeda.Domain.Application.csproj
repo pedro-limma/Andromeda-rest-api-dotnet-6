@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Andromeda.Domain.Core\Andromeda.Domain.Core.csproj" />
+  </ItemGroup>
+
 </Project>

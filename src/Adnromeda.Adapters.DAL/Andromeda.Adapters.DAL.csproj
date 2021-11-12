@@ -7,11 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Repositories\" />
+    <PackageReference Include="MongoDB.Driver" Version="2.13.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MongoDB.Driver" Version="2.13.2" />
+    <ProjectReference Include="..\Adromeda.Domain.Application\Andromeda.Domain.Application.csproj" />
+    <ProjectReference Include="..\Andromeda.Domain.Core\Andromeda.Domain.Core.csproj" />
   </ItemGroup>
 
 </Project>
