@@ -1,4 +1,5 @@
 using Andromeda.Adapters.IoC.DALNativeInjector;
+using Andromeda.Adapters.IoC.DomainNativeInjector;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +12,7 @@ builder.Services.AddSwaggerGen();
 
 
 builder.Services.RegisterDALServices(builder.Configuration);
-
+builder.Services.RegisterDomainServices(builder.Configuration);
 var app = builder.Build();
 
 

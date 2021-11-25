@@ -6,9 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="ValueObjects\IO\Input\" />
-    <Folder Include="ValueObjects\IO\Output\" />
-  </ItemGroup>
-
 </Project>

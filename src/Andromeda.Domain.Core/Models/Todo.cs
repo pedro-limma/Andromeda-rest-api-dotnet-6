@@ -2,21 +2,16 @@
 {
     public class Todo
     {
-        public Todo(string name, string description)
+        public Todo(string name)
         {
-            Id = Guid.NewGuid();
             Name = name;
-            Description = description;
             Done = false;
-            CreatedAt = DateTime.UtcNow;
-            UpdatedAt = DateTime.UtcNow;
+            UpdatedAt = DateTime.UtcNow.ToString();
         }
 
-        public Guid Id { get; private init; }
+        public int Id { get; private init; }
         public string Name { get; set; }
-        public string Description { get; set; }
         public bool Done { get; set; }
-        public DateTime CreatedAt { get; set; }
-        public DateTime UpdatedAt { get; set; }
+        public string UpdatedAt { get; set; }
     }
 }

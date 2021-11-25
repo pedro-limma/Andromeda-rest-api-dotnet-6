@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Andromeda.Domain.Core", "sr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Andromeda.Adapters.DAL", "src\Adnromeda.Adapters.DAL\Andromeda.Adapters.DAL.csproj", "{CA3C9490-A22F-46C2-95E1-89C4499A983F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Andromeda .Ports.API", "src\Andromeda .Ports.API\Andromeda .Ports.API.csproj", "{3F90669E-B450-43E8-9710-E0818231C013}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Andromeda.Ports.API", "src\Andromeda .Ports.API\Andromeda.Ports.API.csproj", "{3F90669E-B450-43E8-9710-E0818231C013}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IoC", "IoC", "{153BDAC8-F7F0-477F-A526-6A3D234A6F28}"
 EndProject

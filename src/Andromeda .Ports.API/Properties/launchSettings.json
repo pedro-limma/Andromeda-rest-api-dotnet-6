@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "Andromeda_.Ports.API": {
+    "Andromeda.Ports.API": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
