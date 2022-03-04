@@ -4,10 +4,9 @@ namespace Andromeda.Domain.Application.Interfaces
 {
     public interface ITodoRepository
     {
-        Task<Todo> CreateTodo(Todo todo);
-        Task<Todo> UpdateTodo(Todo todo);
-        Task DeleteById(string name);
-        Task<List<Todo>> GetAllTodos();
-        Task<Todo> GetById(Guid id);
+        Todo CreateTodo(Todo todo);
+        string GetAllTodos();
+        Todo UpdateTodo(Todo todo);
+        void DeleteTodo(Todo todo);
     }
 }

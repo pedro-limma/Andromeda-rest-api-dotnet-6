@@ -1,18 +1,20 @@
+using Andromeda.Adapters.DAL.SQLContext;
 using Andromeda.Adapters.IoC.DALNativeInjector;
 using Andromeda.Adapters.IoC.DomainNativeInjector;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
-
 builder.Services.RegisterDALServices(builder.Configuration);
 builder.Services.RegisterDomainServices(builder.Configuration);
+
+builder.Services.AddSingleton<ISQLConnectionFactory, SQLConnectionFactory>
+    (services => new SQLConnectionFactory(@"Server=localhost,1433;Initial Catalog=AndromedaDB;Persist Security Info=True;User Id=sa;Password=adminSenha123#"));
+
 var app = builder.Build();
 
 

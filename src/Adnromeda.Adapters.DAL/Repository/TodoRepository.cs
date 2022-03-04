@@ -1,32 +1,29 @@
-﻿using Andromeda.Adapters.DAL.Connection.Factory;
+﻿using Andromeda.Adapters.DAL.SQLContext;
 using Andromeda.Domain.Application.Interfaces;
 using Andromeda.Domain.Core.Models;
 using Dapper;
+using System.Data;
+using System.Globalization;
+using System.Text.Json;
 
 namespace Andromeda.Adapters.DAL.Repository
 {
     public class TodoRepository : BaseRepository, ITodoRepository
     {
-        protected TodoRepository(IDatabaseFactory connection) : base(connection)
-        {
-        }
+        public TodoRepository(ISQLConnectionFactory connection) : base(connection) { }
 
-        public async Task<Todo> CreateTodo(Todo todo)
+        public Todo CreateTodo(Todo todo)
         {
             try
             {
-                using (var connection = _connection.GetDbConnection)
+                using (IDbConnection connection = _connection.Connection)
                 {
-                    string query = $"INSERT INTO Todos OUTPUT Inserted.* VALUES(" +
-                                $"'{todo.Name}'," +
-                                $"{todo.Done}," +
-                                $"{todo.UpdatedAt}";
+                    string query = $"INSERT INTO Todos VALUES('{todo.Name}',{(todo.Done ? 1 : 0)},'{todo.UpdatedAt}')";
 
                     connection.Open();
-                    await connection.ExecuteAsync(query);
+                    connection.Execute(query, todo);
 
-                    return todo; 
-
+                    return todo;
                 }
             }
             catch (Exception ex)
@@ -35,24 +32,62 @@ namespace Andromeda.Adapters.DAL.Repository
             }
         }
 
-        public Task DeleteById(string name)
+        public string GetAllTodos()
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (IDbConnection connection = _connection.Connection)
+                {
+                    connection.Open();
+
+                    return JsonSerializer.Serialize(connection.Query("SELECT * FROM Todos"));
+
+                }
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
-        public Task<List<Todo>> GetAllTodos()
+        public Todo UpdateTodo(Todo todo)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (IDbConnection connection = _connection.Connection)
+                {
+                    connection.Open();
+
+                    string query = $"UPDATE Todos SET IsDone = {(todo.Done ? 1 : 0)}, UpdatedAt = '{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}' WHERE Name='{todo.Name}'";
+                    connection.Execute(query, todo);
+
+                    return todo;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
         }
 
-        public Task<Todo> GetById(Guid id)
+        public void DeleteTodo(Todo todo)
         {
-            throw new NotImplementedException();
-        }
+            try
+            {
+                using (IDbConnection connection = _connection.Connection)
+                {
+                    connection.Open();
 
-        public Task<Todo> UpdateTodo(Todo todo)
-        {
-            throw new NotImplementedException();
+                    string query = $"DELETE FROM Todos WHERE Name='{todo.Name}'";
+
+                    connection.Execute(query, todo);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }

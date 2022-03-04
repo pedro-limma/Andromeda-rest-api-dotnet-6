@@ -1,12 +1,7 @@
 ﻿using Andromeda.Domain.Application.Mapping;
-using Andromeda.Domain.Application.UseCases.AddTodo;
+using Andromeda.Domain.Application.UseCases;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Andromeda.Adapters.IoC.DomainNativeInjector
 {
@@ -16,7 +11,7 @@ namespace Andromeda.Adapters.IoC.DomainNativeInjector
         {
             services.AddScoped<IMappingHandler, MappingHandler>();
 
-            services.AddScoped<IUSCAddTodo, USCAddTodo>();
+            services.AddScoped<IUSCTodo, USCTodo>();
 
             return services;
         }

@@ -9,5 +9,6 @@ namespace Andromeda.Domain.Core.ValueObjects.IO.Input
     public record TodoReq
     {
         public string Name { get; set; }
+        public bool IsDone { get; set; }
     }
 }

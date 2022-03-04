@@ -2,11 +2,11 @@
 {
     public class Todo
     {
-        public Todo(string name)
+        public Todo(string name, bool isDone)
         {
             Name = name;
-            Done = false;
-            UpdatedAt = DateTime.UtcNow.ToString();
+            Done = isDone;
+            UpdatedAt = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss");
         }
 
         public int Id { get; private init; }

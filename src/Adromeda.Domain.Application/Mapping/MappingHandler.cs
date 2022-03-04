@@ -7,7 +7,7 @@ namespace Andromeda.Domain.Application.Mapping
     {
         public Todo HandleTodo(TodoReq todo)
         {
-            return new Todo(name: todo.Name);
+            return new Todo(name: todo.Name, isDone: todo.IsDone);
         }
     }
 }

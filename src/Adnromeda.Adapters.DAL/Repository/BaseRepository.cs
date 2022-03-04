@@ -1,4 +1,4 @@
-﻿using Andromeda.Adapters.DAL.Connection.Factory;
+﻿using Andromeda.Adapters.DAL.SQLContext;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,20 +7,15 @@ using System.Threading.Tasks;
 
 namespace Andromeda.Adapters.DAL.Repository
 {
-    public class BaseRepository : IBaseRepository
+    public abstract class BaseRepository
     {
 
-        protected readonly IDatabaseFactory _connection;
+        protected readonly ISQLConnectionFactory _connection;
 
-        public BaseRepository(IDatabaseFactory connection)
+        public BaseRepository(ISQLConnectionFactory connection)
         {
             _connection =  connection;
         }
 
-
-        public void Dispose()
-        {
-            
-        }
     }
 }
